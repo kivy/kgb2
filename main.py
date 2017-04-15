@@ -37,8 +37,8 @@ short_url_cache = OrderedDict()
 repo_status = defaultdict(str)
 
 
-def color(n, msg):
-    if msg.startswith('http'):
+def color(n, msg, url=False):
+    if url:
         return '\x03{0:>02} {1} \x0300'.format(n, msg)
     else:
         return '\x03{0:>02}{1}\x0300'.format(n, msg)
@@ -219,7 +219,7 @@ class KGB(SingleServerIRCBot):
             issue = color(COLOR_ISSUE, ' #{}'.format(issue))
         body = color(DEFAULT_COLOR, '* ' + self.shorten(body) + ' -')
         action = color(DEFAULT_COLOR, action)
-        url = color(COLOR_URL, self.get_short_url(url))
+        url = color(COLOR_URL, self.get_short_url(url), url=True)
         if target:
             target = color(DEFAULT_COLOR, ' {}'.format(target))
 
