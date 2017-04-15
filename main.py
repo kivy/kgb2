@@ -38,7 +38,7 @@ repo_status = defaultdict(str)
 
 
 def color(n, msg):
-    return '\x03{0:>02}{1}\x0300'.format(n, msg)
+    return '\x03{0:>02} {1} \x0300'.format(n, msg)
 
 
 class KGB(SingleServerIRCBot):
