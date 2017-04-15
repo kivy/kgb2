@@ -1,2 +1,2 @@
 # kgb2
-Kivy server for webhooks and irc emmisions
+Kivy server for webhooks and irc emissions
